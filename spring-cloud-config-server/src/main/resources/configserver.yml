@@ -10,6 +10,7 @@ spring:
     config:
       server:
         git:
+          default-label: main
           uri: https://github.com/spring-cloud-samples/config-repo
           repos:
             - patterns: multi-repo-demo-*
@@ -18,4 +19,8 @@ spring:
 server:
   port: 8888
 management:
-  context_path: /admin
+  endpoints:
+    web:
+      base-path: /admin
+      exposure:
+        include: "*"
