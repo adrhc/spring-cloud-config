@@ -7,3 +7,14 @@ logging:
   levels:
     org.springframework.boot.env.PropertySourcesLoader: TRACE
     org.springframework.web: DEBUG
+spring:
+  application:
+    name: bar
+  config:
+    import: "optional:configserver:"
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: "*"
